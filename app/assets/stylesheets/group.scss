@@ -1,5 +1,5 @@
 .container {
-  width: 100%;
+  width: 100vw;
   min-width: 1200px;
   height: 100vh;
   .chat_menu {
@@ -47,7 +47,7 @@
   .chat_main {
     float: left;
     height: 100vh;
-    width: 900px;
+    width: calc(100vw - 380px);
 
     .chat_info {
       border-bottom: solid 3px #eeeeee;
@@ -122,13 +122,14 @@
     .chat_form {
       padding: 20px 40px 0;
       background-color: #ddd;
-      width: 100%;
+      width: calc(100vw - 380px);
       position: fixed;
       bottom: 0;
+      left: 300px;
 
       .text_form {
         height: 20px;
-        width: 765px;
+        width: calc(100vw - 572px);
         padding: 15px 10px;
         border: none;
 
