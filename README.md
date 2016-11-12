@@ -19,8 +19,8 @@
 |Variable name|Variable Type|
 |:---:|:---:|
 |id|integer|
-|name|text|
-### groupsusers
+|name|string|
+### group_users
 |Variable name|Variable Type|
 |:---:|:---:|
 |id|integer|
@@ -36,13 +36,13 @@
 |Association|Table name|
 |:---:|:---:|
 |has_many|messages|
-|has_many|groups(through groupsusers)|
+|has_many|groups(through group_users)|
 ### groups
 |Association|Table name|
 |:---:|:---:|
 |has_many|messages|
-|has_many|users(through groupsusers)|
-### groupsusers
+|has_many|users(through group_users)|
+### group_users
 |Association|Table name|
 |:---:|:---:|
 |belongs_to|group|
