@@ -1,70 +1,70 @@
 .container
-  .chat_menu
-    .user_info
-      .user_name
+  .menu
+    .menu__user
+      .menu__user__name
         Okubo
-        .user_settings
+        .menu__user__name__icons
           %i.fa.fa-pencil-square-o
           %i.fa.fa-cog
-    .chat_groups
-      .chat_group
-        .chat_group_name
+    .menu__groups
+      .menu__groups__group
+        .menu__groups__group__name
           hello World!
-        .chat_message_info
+        .menu__groups__group__info
           新着メッセージはありません
-      .chat_group
-        .chat_group_name
+      .menu__groups__group
+        .menu__groups__group__name
           hello World 2!
-        .chat_message_info
+        .menu__groups__group__info
           新着メッセージが2件あります
-  .chat_main
-    .chat_info
-      .chat_info_left
-        .group_name
+  .chats
+    .chats__info
+      .chats__info__left
+        .chats__info__left__group
           Hello World!グループ
-        .members_list
+        .chats__info__left__members
           Members: Okubo Koki
-      .edit_button
-        .edit_button_text
+      .chats__info__edit
+        .chats__info__edit__text
           Edit
-    .chat_list
-      .chat
-        .chat_user
+    .chats__list
+      .chats__list__chat
+        .chats__list__chat__user
           Okubo
-        .chat_date
+        .chats__list__chat__date
           2016/12/12 04:43:12
-        .chat_text
+        .chats__list__chat__text
           大久保だよ！
-      .chat
-        .chat_user
-          Koki
-        .chat_date
-          2016/12/12 04:44:12
-        .chat_text
-          コウキ
-      .chat
-        .chat_user
-          Koki
-        .chat_date
-          2016/12/12 04:44:12
-        .chat_text
-          コウキ
-      .chat
-        .chat_user
-          Koki
-        .chat_date
-          2016/12/12 04:44:12
-        .chat_text
-          コウキ
-      .chat
-        .chat_user
-          Koki
-        .chat_date
-          2016/12/12 04:44:12
-        .chat_text
-          コウキ
-    %form.chat_form
-      %textarea{class: "text_form", placeholder: "type a message"}
-      %label.image_icon
+      .chats__list__chat
+        .chats__list__chat__user
+          Okubo
+        .chats__list__chat__date
+          2016/12/12 04:43:12
+        .chats__list__chat__text
+          大久保だよ！
+      .chats__list__chat
+        .chats__list__chat__user
+          Okubo
+        .chats__list__chat__date
+          2016/12/12 04:43:12
+        .chats__list__chat__text
+          大久保だよ！
+      .chats__list__chat
+        .chats__list__chat__user
+          Okubo
+        .chats__list__chat__date
+          2016/12/12 04:43:12
+        .chats__list__chat__text
+          大久保だよ！
+      .chats__list__chat
+        .chats__list__chat__user
+          Okubo
+        .chats__list__chat__date
+          2016/12/12 04:43:12
+        .chats__list__chat__text
+          大久保だよ！
+    %form.chats__form
+      %textarea{class: "chats__form__text", placeholder: "type a message"}
+      %label.chats__form__icon
         %i.fa.fa-image
-      %input{type: "submit", value: "Send", class: "submit_button"}
+      %input{type: "submit", value: "Send", class: "chats__form__submit"}
