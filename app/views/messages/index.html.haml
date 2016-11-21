@@ -1,6 +1,70 @@
 .container
   .chat_menu
     .user_info
+      .user_name
+        Okubo
+        .user_settings
+          %i.fa.fa-pencil-square-o
+          %i.fa.fa-cog
     .chat_groups
       .chat_group
+        .chat_group_name
+          hello World!
+        .chat_message_info
+          新着メッセージはありません
+      .chat_group
+        .chat_group_name
+          hello World 2!
+        .chat_message_info
+          新着メッセージが2件あります
   .chat_main
+    .chat_info
+      .chat_info_left
+        .group_name
+          Hello World!グループ
+        .members_list
+          Members: Okubo Koki
+      .edit_button
+        .edit_button_text
+          Edit
+    .chat_list
+      .chat
+        .chat_user
+          Okubo
+        .chat_date
+          2016/12/12 04:43:12
+        .chat_text
+          大久保だよ！
+      .chat
+        .chat_user
+          Koki
+        .chat_date
+          2016/12/12 04:44:12
+        .chat_text
+          コウキ
+      .chat
+        .chat_user
+          Koki
+        .chat_date
+          2016/12/12 04:44:12
+        .chat_text
+          コウキ
+      .chat
+        .chat_user
+          Koki
+        .chat_date
+          2016/12/12 04:44:12
+        .chat_text
+          コウキ
+      .chat
+        .chat_user
+          Koki
+        .chat_date
+          2016/12/12 04:44:12
+        .chat_text
+          コウキ
+    %form.chat_form
+      %textarea{class: "text_form", placeholder: "type a message"}
+      %label.image_icon
+        %i.fa.fa-image
+      %input{type: "submit", value: "Send", class: "submit_button"}
