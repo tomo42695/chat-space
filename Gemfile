@@ -26,8 +26,6 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'font-awesome-rails'
 gem 'devise'
-gem 'twitter-bootstrap-rails'
-gem "bootstrap-sass"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
