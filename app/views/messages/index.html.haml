@@ -4,7 +4,8 @@
       .menu__user__name
         Okubo
         .menu__user__name__icons
-          %i.fa.fa-pencil-square-o
+          = link_to new_group_path do
+            %i.fa.fa-pencil-square-o
           = link_to edit_user_registration_path(current_user) do
             %i.fa.fa-cog
     .menu__groups
