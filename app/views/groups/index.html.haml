@@ -2,30 +2,28 @@
   .menu
     .menu__user
       .menu__user__name
-        Okubo
+        = current_user.name
         .menu__user__name__icons
           = link_to new_group_path do
             %i.fa.fa-pencil-square-o
           = link_to edit_user_registration_path(current_user) do
             %i.fa.fa-cog
     .menu__groups
-      .menu__groups__group
-        .menu__groups__group__name
-          hello World!
-        .menu__groups__group__info
-          新着メッセージはありません
-      .menu__groups__group
-        .menu__groups__group__name
-          hello World 2!
-        .menu__groups__group__info
-          新着メッセージが2件あります
+      - current_user.groups.each do |group|
+        .menu__groups__group
+          .menu__groups__group__name
+            = group.name
+          .menu__groups__group__info
+            新着メッセージはありません
   .chats
     .chats__info
       .chats__info__left
         .chats__info__left__group
           Hello World!グループ
         .chats__info__left__members
-          Members: Okubo Koki
+          Members:
+          - @group.users.each do |user|
+            = user.name
       = link_to edit_group_path(@group) do
         .chats__info__edit
           .chats__info__edit__text
