@@ -26,9 +26,10 @@
           Hello World!グループ
         .chats__info__left__members
           Members: Okubo Koki
-      .chats__info__edit
-        .chats__info__edit__text
-          Edit
+      = link_to edit_group_path(@group) do
+        .chats__info__edit
+          .chats__info__edit__text
+            Edit
     .chats__list
       .chats__list__chat
         .chats__list__chat__user
