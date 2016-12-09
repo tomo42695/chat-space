@@ -1,0 +1,30 @@
+.container
+  = render 'layouts/sidemenu'
+  .chats
+    .chats__info
+      .chats__info__left
+        .chats__info__left__group
+          Hello World!グループ
+        .chats__info__left__members
+          Members:
+          - @group.users.each do |user|
+            = user.name
+      = link_to edit_group_path(@group) do
+        .chats__info__edit
+          .chats__info__edit__text
+            Edit
+    .chats__list
+      - @group.messages.each do |message|
+        .chats__list__chat
+          .chats__list__chat__user
+            = message.user.name
+          .chats__list__chat__date
+            = message.created_at
+          .chats__list__chat__text
+            = message.text
+    .chats__form
+      = form_for [@group, @message] do |f|
+        = f.text_area :text, class: "chats__form__text", placeholder: "type a message"
+        = f.label "", class: "chats__form__icon" do
+          %i.fa.fa-image
+        = f.submit "Send", class: "chats__form__submit"
