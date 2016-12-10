@@ -14,14 +14,7 @@
           .chats__info__edit__text
             Edit
     .chats__list
-      - @group.messages.each do |message|
-        .chats__list__chat
-          .chats__list__chat__user
-            = message.user.name
-          .chats__list__chat__date
-            = message.created_at
-          .chats__list__chat__text
-            = message.text
+      = render partial: 'layouts/group_message', collection: @messages
     .chats__form
       = form_for [@group, @message] do |f|
         = f.text_area :text, class: "chats__form__text", placeholder: "type a message"
