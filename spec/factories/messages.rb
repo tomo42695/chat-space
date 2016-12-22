@@ -1,10 +1,10 @@
 FactoryGirl.define do
 
   factory :message do
-    text                  "hello world"
-    image                 "This is an image"
-    user_id               "1"
-    group_id              "1"
+    text                  { Faker::Hipster.sentence }
+    image                 { Faker::Placeholdit.image  }
+    user_id               { Faker::Number.digit }
+    group_id              { Faker::Number.digit }
   end
 
 end
