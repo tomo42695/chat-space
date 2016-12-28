@@ -37,7 +37,7 @@ RSpec.describe MessagesController, type: :controller do
         it 'should increment the Message count' do
           expect do
             request
-          end.to change(Message, :count).by(0)
+          end.to change(Message, :count).by(1)
         end
         it 'should show flash notice message' do
           request

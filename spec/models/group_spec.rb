@@ -1,15 +1,13 @@
 require 'rails_helper'
+
 describe Group do
+  let (:group) { create(:group)}
   describe '#create' do
-    before do
-      group = build(:group)
-    end
     it "is valid with a name" do
-      group = build(:group)
       expect(group).to be_valid
     end
     it "is invalid without a without a name" do
-      group = build(:group, name: "")
+      group[:name] = ""
       group.valid?
       expect(group.errors[:name]).to include("can't be blank")
     end
