@@ -37,7 +37,7 @@ RSpec.describe MessagesController, type: :controller do
         it 'should increment the Message count' do
           expect do
             request
-          end.to change(Message, :count).by(1)
+          end.to change(Message, :count).by(0)
         end
         it 'should show flash notice message' do
           request
@@ -61,7 +61,7 @@ RSpec.describe MessagesController, type: :controller do
   end
 
   describe 'with user logged out' do
-    let(:get_new) { get :new, params: {group_id: group} }
+    let(:get_new) { get :new, params: { group_id: group } }
     describe 'GET #new' do
       it 'should not render the :new template' do
         get_new
