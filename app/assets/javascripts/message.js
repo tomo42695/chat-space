@@ -1,6 +1,16 @@
 $(function() {
   function buildHTML(message) {
-    var html = $('<li class="todo">').append(message.text);
+    var html = $('<div class="chats__list__chat">'          +
+                    '<div class="chats__list__chat__user">' +
+                      message.user.name                     +
+                    '</div>'                                +
+                    '<div class="chats__list__chat__date">' +
+                      message.created_at                    +
+                    '</div>'                                +
+                    '<div class="chats__list__chat__text">' +
+                      message.text                          +
+                    '</div>'                                +
+                  '</div>');
     return html;
   }
 
@@ -10,11 +20,10 @@ $(function() {
     var message = messageField.val();
     $.ajax({
       type: 'POST',
-      url: '/message.json',
+      url: ".",
       data: {
         message: {
           text: message
-          image: image
         }
       },
       dataType: 'json'

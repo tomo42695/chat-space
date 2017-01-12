@@ -4,7 +4,7 @@
     .chats__info
       .chats__info__left
         .chats__info__left__group
-          Hello World!グループ
+          = "#{ @group.name }グループ"
         .chats__info__left__members
           Members:
           - @group.users.each do |user|

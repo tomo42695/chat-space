@@ -7,10 +7,11 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
+    @message.user = @message.user
     if @message.save
       respond_to do |format|
         format.html { redirect_to :new_group_message }
-        format.json { render json: @message }
+        format.json { render json: [@message] }
       end
       flash[:notice] = 'メッセージ投稿に成功しました'
     else
