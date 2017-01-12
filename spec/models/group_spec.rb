@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Group do
-  let (:group) { create(:group)}
+  let (:group) { create(:group) }
   describe '#create' do
     it "is valid with a name" do
       expect(group).to be_valid
