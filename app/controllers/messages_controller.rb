@@ -2,16 +2,19 @@ class MessagesController < ApplicationController
   def new
     @message = Message.new
     @group = Group.find(params[:group_id])
-    @messages = @group.messages.order('created_at desc')
+    @messages = @group.messages
   end
 
   def create
     @message = Message.new(message_params)
-    @message.user = @message.user
     if @message.save
       respond_to do |format|
         format.html { redirect_to :new_group_message }
-        format.json { render json: [@message] }
+        format.json { render json: {
+          name:       @message.user.name,
+          created_at: @message.created_at,
+          text:       @message.text
+          } }
       end
       flash[:notice] = 'メッセージ投稿に成功しました'
     else

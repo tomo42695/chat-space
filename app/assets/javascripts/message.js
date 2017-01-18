@@ -2,7 +2,7 @@ $(function() {
   function buildHTML(message) {
     var html = $('<div class="chats__list__chat">'          +
                     '<div class="chats__list__chat__user">' +
-                      message.user.name                     +
+                      message.name                          +
                     '</div>'                                +
                     '<div class="chats__list__chat__date">' +
                       message.created_at                    +
@@ -32,6 +32,7 @@ $(function() {
       var html = buildHTML(data);
       $('.chats__list').append(html);
       messageField.val('');
+      $('.chats__form__submit').removeAttr('disabled');
     })
     .fail(function() {
       alert('error');
