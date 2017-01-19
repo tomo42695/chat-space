@@ -1,14 +1,14 @@
 $(function() {
-  function buildHTML(message) {
+  function buildHTML(data) {
     var html = $('<div class="chats__list__chat">'          +
                     '<div class="chats__list__chat__user">' +
-                      message.name                          +
+                      data[1].name                          +
                     '</div>'                                +
                     '<div class="chats__list__chat__date">' +
-                      message.created_at                    +
+                      data[0].created_at                    +
                     '</div>'                                +
                     '<div class="chats__list__chat__text">' +
-                      message.text                          +
+                      data[0].text                          +
                     '</div>'                                +
                   '</div>');
     return html;
