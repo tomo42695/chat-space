@@ -11,6 +11,14 @@ $(function() {
                       data[0].text                          +
                     '</div>'                                +
                   '</div>');
+                  console.log(data);
+
+    return html;
+  }
+  function buildFLASH(data) {
+    var html = $('<div class="alert">'          +
+                      data[2]                   +
+                  '</div>');
     return html;
   }
 
@@ -29,8 +37,13 @@ $(function() {
       dataType: 'json'
     })
     .done(function(data) {
-      var html = buildHTML(data);
-      $('.chats__list').append(html);
+      if (data[2] == null) {
+        var html = buildHTML(data);
+        $('.chats__list').append(html);
+      } else {
+        var html = buildFLASH(data);
+        $('.flash').append(html);
+      };
       messageField.val('');
       $('.chats__form__submit').removeAttr('disabled');
     })

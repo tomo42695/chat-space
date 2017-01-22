@@ -9,7 +9,8 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @user = @message.user
     @message.save
-    render json: [@message, @user]
+    @error = @message.errors.full_messages[0]
+    render :new_group_message, json: [@message, @user, @error]
   end
 
   private
