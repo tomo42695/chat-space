@@ -37,6 +37,7 @@ $(function() {
       dataType: 'json'
     })
     .done(function(data) {
+      $('.flash').empty();
       if (data[2] == null) {
         var html = buildHTML(data);
         $('.chats__list').append(html);
