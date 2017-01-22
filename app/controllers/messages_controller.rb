@@ -7,8 +7,8 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-    @user = @message.user
     @message.save
+    @user = @message.user
     @error = @message.errors.full_messages[0]
     render :new_group_message, json: [@message, @user, @error]
   end
