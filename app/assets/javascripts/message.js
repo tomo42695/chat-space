@@ -1,4 +1,4 @@
-$(function() {
+document.addEventListener("turbolinks:load", function() {
   function buildHTML(data) {
     var html = $('<div class="chats__list__chat">'          +
                     '<div class="chats__list__chat__user">' +

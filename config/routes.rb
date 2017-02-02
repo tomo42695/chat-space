@@ -3,5 +3,8 @@ Rails.application.routes.draw do
   root 'groups#index'
   resources :groups, only: [:index, :new, :edit, :create, :update], shallow: true do
     resources :messages, only: [:new, :create]
+    collection do
+      get 'search'
+    end
   end
 end

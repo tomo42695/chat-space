@@ -8,12 +8,16 @@
         = f.text_field :name, class: 'chat-group-form__input', id: 'chat_group_name', placeholder: 'グループ名を入力してください'
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        = f.label 'チャットメンバー', class: 'chat-group-form__label', for: 'chat_group_チャットメンバー'
+        = f.label 'チャットメンバーを追加', class: 'chat-group-form__label', for: 'chat_group_チャットメンバー'
       .chat-group-form__field--right
         #chat-group-users
-          #chat-group-user-22.chat-group-user.clearfix
-            = f.collection_check_boxes :user_ids, User.all, :id, :name do |b|
-              = b.label { b.check_box + b.text }
+          %input.chat-group-form__input.chat-group-search-form(type='text' placeholder='ユーザ名を入力して下さい' id='user-name')
+        #chat-group-users-search
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        = f.label 'チャットメンバー', class: 'chat-group-form__label'
+      .chat-group-form__field--right
+        #chat-group-form__field--right-users
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right

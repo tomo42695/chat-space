@@ -340,3 +340,23 @@ $textarea_height: 50px;
     clear: both;
   }
 }
+.list {
+  list-style: none;
+  padding: 15px;
+  border-bottom: solid 1px #C0C0C0;
+}
+.search-button {
+  float: right;
+}
+
+.search-button-plus {
+  color: blue;
+}
+
+.search-button-minus {
+  color: red;
+}
+
+.chat-group-search-form {
+  margin-bottom: 20px;
+}

@@ -1,7 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_groups, only: %i(update edit)
   def index
-    @group = Group.find(1)
   end
 
   def new
@@ -9,6 +8,11 @@ class GroupsController < ApplicationController
   end
 
   def edit
+  end
+
+  def search
+    @users = User.where('name LIKE ?', "%#{params[:name]}%")
+    render :new_group_message, json: @users
   end
 
   def update
@@ -24,7 +28,7 @@ class GroupsController < ApplicationController
   private
 
   def groups_params
-    params.require(:group).permit(:name, {user_ids: [] })
+    params.require(:group).permit(:name, { user_ids: [] })
   end
 
   def set_groups
