@@ -50,6 +50,7 @@ document.addEventListener('turbolinks:load', function() {
         html = buildSelectedUsers(name, user_id);
         $('#chat-group-form__field--right-users').append(html)
       })
+
       $(document).on('click', '.search-button-minus', function(e) {
         e.preventDefault;
         $(this).parent().remove();
