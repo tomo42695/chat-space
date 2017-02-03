@@ -1,5 +1,11 @@
-$(function() {
+document.addEventListener("turbolinks:load", function() {
   function buildHTML(data) {
+    debugger;
+    if (data[0].image) {
+      Image = '<img src="' + data[0].image_url + '">';
+    } else {
+      Image = '';
+    }
     var html = $('<div class="chats__list__chat">'          +
                     '<div class="chats__list__chat__user">' +
                       data[1].name                          +
@@ -9,9 +15,9 @@ $(function() {
                     '</div>'                                +
                     '<div class="chats__list__chat__text">' +
                       data[0].text                          +
+                      Image                                 +
                     '</div>'                                +
                   '</div>');
-                  console.log(data);
 
     return html;
   }
@@ -26,12 +32,15 @@ $(function() {
     e.preventDefault();
     var messageField = $('.chats__form__text');
     var message = messageField.val();
+    var imageField = $('.chats__form__image')
+    var image = imageField.val();
     $.ajax({
       type: 'POST',
       url: ".",
       data: {
         message: {
-          text: message
+          text: message,
+          image: image
         }
       },
       dataType: 'json'
