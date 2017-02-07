@@ -1,0 +1,15 @@
+current directory: /Users/Tomomu_Iwai/projects/chat-space/vendor/bundle/ruby/2.3.0/gems/websocket-driver-0.6.4/ext/websocket-driver
+/Users/Tomomu_Iwai/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20170203-65366-vvurg4.rb extconf.rb
+creating Makefile
+
+current directory: /Users/Tomomu_Iwai/projects/chat-space/vendor/bundle/ruby/2.3.0/gems/websocket-driver-0.6.4/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/Tomomu_Iwai/projects/chat-space/vendor/bundle/ruby/2.3.0/gems/websocket-driver-0.6.4/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/Tomomu_Iwai/projects/chat-space/vendor/bundle/ruby/2.3.0/gems/websocket-driver-0.6.4/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20170203-65366-1h7udfx
