@@ -1,10 +1,9 @@
 document.addEventListener("turbolinks:load", function() {
   function buildHTML(data) {
-    debugger;
-    if (data[0].image) {
-      Image = '<img src="' + data[0].image_url + '">';
-    } else {
+    if (data[0].image.url == null) {
       Image = '';
+    } else {
+      Image = '<img src="' + data[0].image.url + '">';
     }
     var html = $('<div class="chats__list__chat">'          +
                     '<div class="chats__list__chat__user">' +
@@ -28,22 +27,22 @@ document.addEventListener("turbolinks:load", function() {
     return html;
   }
 
-  $('.chats__form').on('submit', function(e) {
+  $('.new_message').on('submit', function(e) {
     e.preventDefault();
+
     var messageField = $('.chats__form__text');
-    var message = messageField.val();
-    var imageField = $('.chats__form__image')
-    var image = imageField.val();
+    var imageField = $('.chats__form__image');
+
+    var form = $('#new_message')[0];
+    var formData = new FormData(form);
+
     $.ajax({
       type: 'POST',
       url: ".",
-      data: {
-        message: {
-          text: message,
-          image: image
-        }
-      },
-      dataType: 'json'
+      data: formData,
+      dataType: 'json',
+      processData: false,
+      contentType: false
     })
     .done(function(data) {
       $('.flash').empty();
@@ -55,10 +54,12 @@ document.addEventListener("turbolinks:load", function() {
         $('.flash').append(html);
       };
       messageField.val('');
+      imageField.val('');
+
       $('.chats__form__submit').removeAttr('disabled');
     })
     .fail(function() {
-      alert('error');
+      alert('エラーが発生しました');
     });
   });
 })
