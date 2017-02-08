@@ -1,19 +1,19 @@
 document.addEventListener("turbolinks:load", function() {
-  function buildHTML(data) {
-    if (data[0].image.url == null) {
+  function buildHTML(data, name, image) {
+    if (image == null) {
       Image = '';
     } else {
-      Image = '<img src="' + data[0].image.url + '">';
+      Image = '<img src="' + image + '">';
     }
     var html = $('<div class="chats__list__chat">'          +
                     '<div class="chats__list__chat__user">' +
-                      data[1].name                          +
+                      name                          +
                     '</div>'                                +
                     '<div class="chats__list__chat__date">' +
-                      data[0].created_at                    +
+                      data.created_at                    +
                     '</div>'                                +
                     '<div class="chats__list__chat__text">' +
-                      data[0].text                          +
+                      data.text                          +
                       Image                                 +
                     '</div>'                                +
                   '</div>');
@@ -26,6 +26,23 @@ document.addEventListener("turbolinks:load", function() {
                   '</div>');
     return html;
   }
+
+  setInterval(function(data) {
+    $.ajax({
+      type: 'GET',
+      url: './new',
+      dataType: 'json'
+    })
+    .done(function(data) {
+      $.each(data, function(i, data) {
+        var html = buildHTML(data, data.name, data.image);
+        $('.chats__list').append(html);
+      })
+    })
+    .fail(function() {
+      console.log('エラーが発生しました');
+    })
+  }, 5000);
 
   $('.new_message').on('submit', function(e) {
     e.preventDefault();
@@ -47,7 +64,7 @@ document.addEventListener("turbolinks:load", function() {
     .done(function(data) {
       $('.flash').empty();
       if (data[2] == null) {
-        var html = buildHTML(data);
+        var html = buildHTML(data[0], data[1].name, data[0].image.url);
         $('.chats__list').append(html);
       } else {
         var html = buildFLASH(data);
