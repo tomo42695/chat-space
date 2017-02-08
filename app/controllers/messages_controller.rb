@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   def new
     @message = Message.new
     @group = Group.find(params[:group_id])
-    @messages = @group.messages
+    @messages = @group.messages.includes(:user)
   end
 
   def create
