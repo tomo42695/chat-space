@@ -28,12 +28,17 @@
       }
     }
     &__groups {
-      background-color: #2f3e51;
       height: calc(100vh - 100px);
-      padding:  0 20px;
 
       &__group {
         color: #FFFFFF;
+        background-color: #2f3e51;
+        padding:  0 20px;
+
+      &:hover {
+        background-color: #2150c9;
+
+      }
 
         &__name {
           padding: 20px 0 5px;

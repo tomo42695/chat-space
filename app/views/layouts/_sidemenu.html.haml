@@ -14,4 +14,8 @@
           .menu__groups__group__name
             = group.name
           .menu__groups__group__info
-            新着メッセージはありません
+            - if group.messages.empty?
+              新着メッセージはありません
+            - else
+              = "#{group.messages.length}件のメッセージがあります"
+
