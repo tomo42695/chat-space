@@ -17,8 +17,9 @@
     .chats__list
       = render partial: 'layouts/group_message', collection: @messages
     .chats__form
-      = form_for [@group, @message] do |f|
+      = form_for [@group, @message], id: "chats__form__form" do |f|
         = f.text_area :text, class: "chats__form__text", placeholder: "type a message"
-        = f.label "", class: "chats__form__icon" do
-          %i.fa.fa-image
+        %label.file
+          %i.fa.fa-image.chats__form__icon#file
+          = f.file_field :image, class: "chats__form__image"
         = f.submit "Send", class: "chats__form__submit"

@@ -5,3 +5,4 @@
     = group_message.created_at
   .chats__list__chat__text
     = group_message.text
+    = image_tag(group_message.image.to_s) if group_message.image
