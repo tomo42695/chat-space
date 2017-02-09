@@ -8,13 +8,12 @@
           = "#{ @group.name }グループ"
         .chats__info__left__members
           Members:
-          - @group.users.each do |user|
-            = user.name
+          = @group.users.pluck(:name).join(', ')
       = link_to edit_group_path(@group) do
         .chats__info__edit
           .chats__info__edit__text
             Edit
-    .chats__list
+    %ul.chats__list
       = render partial: 'layouts/group_message', collection: @messages
     .chats__form
       = form_for [@group, @message], id: "chats__form__form" do |f|

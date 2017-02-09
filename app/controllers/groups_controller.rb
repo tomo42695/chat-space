@@ -5,6 +5,7 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
+    binding.pry
   end
 
   def edit
