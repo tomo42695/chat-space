@@ -30,6 +30,7 @@ gem 'devise'
 gem 'pry-rails'
 gem 'carrierwave', '0.11.2'
 gem 'fog'
+gem 'rb-readline'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function() {
+document.addEventListener('turbolinks:load', function() {
   function buildHTML(data, name, image) {
     if (image == null) {
       Image = '';
@@ -7,23 +7,24 @@ document.addEventListener("turbolinks:load", function() {
     }
     var html = $('<div class="chats__list__chat">'          +
                     '<div class="chats__list__chat__user">' +
-                      name                          +
+                      name                                  +
                     '</div>'                                +
                     '<div class="chats__list__chat__date">' +
-                      data.created_at                    +
+                      data.created_at                       +
                     '</div>'                                +
                     '<div class="chats__list__chat__text">' +
-                      data.text                          +
+                      data.text                             +
                       Image                                 +
                     '</div>'                                +
                   '</div>');
 
     return html;
   }
+
   function buildFLASH(data) {
     var html = $('<div class="alert">'          +
-                      data[2]                   +
-                  '</div>');
+                   data[2]                      +
+                 '</div>');
     return html;
   }
 
@@ -34,6 +35,7 @@ document.addEventListener("turbolinks:load", function() {
       dataType: 'json'
     })
     .done(function(data) {
+      $('.chats__list').empty();
       $.each(data, function(i, data) {
         var html = buildHTML(data, data.name, data.image);
         $('.chats__list').append(html);
