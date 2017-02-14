@@ -32,6 +32,7 @@
 # Feel free to add new variables to customise your setup.
 
 server '13.112.207.65', user: 'ec2-user', roles: %w{app db web}
+config.assets.compile = false
 
 # Custom SSH Options
 # ==================
