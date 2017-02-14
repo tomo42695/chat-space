@@ -24,6 +24,8 @@ set :default_env, {
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 set :sidekiq_queue, :carrierwave
 
+set :assets_roles, [:web, :app]
+
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
