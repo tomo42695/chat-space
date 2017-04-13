@@ -58,7 +58,7 @@ document.addEventListener('turbolinks:load', function() {
     $.ajax({
       type: 'POST',
       url: ".",
-      data: formData,
+      data: formDat,
       dataType: 'json',
       processData: false,
       contentType: false
